@@ -1,38 +1,33 @@
 body {
-    background-image: url("../img/fondoazul.jpg");
-    background-color: #cccccc;
- 
-  
+    background: linear-gradient(to right, #bc4e9c, #f80759);
   }
 
 
-.contenidoa {display:block; }
-
-
-div.iconos {
-    margin: 10px;
-    border: 1px solid ##4682B4;
-    float: left;
-    width: 100px;
+  h1 {
     color: white;
+    font-size: 200%
+  },
+
+#cont_cajacomentarios{
+    margin-top: 0%;
+    margin-bottom: 8%;
+    margin-left: 0%
+    /* float: left; */
+    padding-bottom: 0px; 
+    
+};
+
+#menu {
+    padding: 10px;
+    font-size: 50px;
 }
 
-div.gallery img {
-    width: 40%;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
+
+
+
 
 div.iconos:hover {
     border: 1px solid #777;
         
 }
     
-}
-div.desc {
-    padding: 0px;
-    text-align: center;
-
-}
