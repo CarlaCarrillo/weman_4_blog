@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Blog WemanConnect</title>
+    
+    <script type="text/javascript">
+    
+    function dibuja() {
+        let cont = document.getElementById('cont_comentarios');
+        for(let i = 0; i < 7; i++) {
+            let nvoComment = '<div class="comentario" id="com'+i+'">'+
+        
+        '<div class="comentario_hdr">'+
+                '<h3 id="titulo_'+i+'">' + 'Comentario ' + i +'</h3>'+
+                '<p id="autor">'+i+'</p>'+
+        '</div>'+
+        `<div id="contenido" class="comentario_cont">${i}</div}`+
+        '<img src="./ejemplo.jpg" alt="imagen de ejemplo" />'+
+        '</div>';
+                    cont.innerHTML += nvoComment;
+                }
+            }
+            function inicia() {
+                dibuja();
+            }
+    </script>
+</head>
+
+<body onload="inicia()">
+    <!--encabezdo general-->
+    <!--icono, barra de título y espcio para dos iconos
+    del lado derecho-->
+    <!--navegción-->
+    <nav>
+        <img src="img/icono-default.png" />
+        <h1>Weman Connect Blog</h1>
+        <div class="hdr_tools">
+            <a href="#"><li>Publicar</li></a>
+            <button>Entrar</button>
+
+
+
+        </div>
+    </nav>
+    <!--navegción-->
+    <!--después hay un contenedor grande donde van las publicaciones-->
+<!--podría añadir aquí el separador o div para la publicación nueva-->
+</body>
+</html>
