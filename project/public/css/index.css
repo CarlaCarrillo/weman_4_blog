@@ -1,0 +1,38 @@
+body {
+    background-image: url("../img/fondoazul.jpg");
+    background-color: #cccccc;
+ 
+  
+  }
+
+
+.contenidoa {display:block; }
+
+
+div.iconos {
+    margin: 10px;
+    border: 1px solid ##4682B4;
+    float: left;
+    width: 100px;
+    color: white;
+}
+
+div.gallery img {
+    width: 40%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.iconos:hover {
+    border: 1px solid #777;
+        
+}
+    
+}
+div.desc {
+    padding: 0px;
+    text-align: center;
+
+}
