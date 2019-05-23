@@ -55,7 +55,7 @@
 </div>
     
     <!--navegción-->
-<div id="cont_cajacomentarios">
+
    <script type="text/javascript">
         function dibuja() {
             let cont = document.getElementById('cont_cajacomentarios');
@@ -63,11 +63,11 @@
                 let nvoComment = '<div class="comentario" id="com'+i+'">'+
             
             '<div class="comentario_hdr">'+
-                '<h3 id="titulo_'+i+'">' + 'Comentario ' + i +'</h3>'+
-                '<p id="autor">'+i+'</p>'+
+                '<h3 id="titulo_'+i+'">' + 'Entrada de Noticias ' + i +'</h3>'+
+                '<p id="autor">'+i+'Autor del post</p>'+
             '</div>'+
-            `<div id="contenido" class="comentario_cont">${i}</div}`+
-            '<img src="./ejemplo.jpg" alt="imagen de ejemplo" />'+
+            `<div id="contenido" class="comentario_cont">${i}Aquí ingresa el contenido de tu comentario</div}`+
+            '<img src="img/delfines.jpg" alt="imagen de ejemplo" />'+
             '</div>';
                         cont.innerHTML += nvoComment;
                     }
@@ -76,12 +76,19 @@
                     dibuja();
                 }
         </script>    
-  
-        <img src="" />
-        <div class="entradas">
-            <a href="#"><li>Publicar</li></a>
-            <button>Entrar</button>
-        </div>
+       
+       <section id="cont_cajacomentarios">
+            <div class="comentario" id="com1">
+                <div class="comentario_hdr">
+                    <h3 id="titulo">ENTRADA DE NOTICIAS</h3>
+                    <p id="autor">Autor del post</p>
+                </div>
+                <div id="contenido" class="comentario_cont">A continuación os presentamos una pequeña<br>
+                     colección de imagenes de delfines en diversas<br> situaciones en el mar. .</div>
+                <img class="img_comentario" img src="img/delfines.jpg" alt="imagen de ejemplo"  />
+            </div>
+        </section>
+
     </div>
     <!--navegción-->
     <!--después hay un contenedor grande donde van las publicaciones-->
