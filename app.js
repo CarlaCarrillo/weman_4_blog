@@ -1,14 +1,8 @@
-const express = require('express')
-const bodyParser = require ('body-parser')
+var express = require('express');
+var bodyParser = require("body-parser");
 var app = express();
-
-app.engine('jade', require('jade').__express)
-app.set('view engine', 'jade')
-
-app.use(express.static(__dirname + '/public'))
-app.use(require('./middlewares/users'))
-app.use(require('./controllers'))
-
-app.listen(3000, function() {
-  console.log('Listening on port 3000...')
-})
+var rtr = require('./routes/index.js');
+//Here we are configuring express to use body-parser as middle-ware.
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/', rtr);
+app.listen(3000);
