@@ -65,11 +65,10 @@ function peticionAsync(tipo, url, parametros) {
 
 function leePublicaciones() {
     peticionAsync('GET', '/comentarios', '');
-    alert("leerPublic mensaje")
 }
 
 function dibujaPublic(publicaciones) {
-    let cont = document.getElementById('publicaciones');
+    let cont = document.getElementById('public');
     for(let i = 0; i < publicaciones.length;i++) {
         let nvaPublicación = '<div class="comentario" id="com'+publicaciones[i].id+'">'+
     
