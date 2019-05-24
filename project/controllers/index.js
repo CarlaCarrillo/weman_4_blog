@@ -1,24 +1,22 @@
+function hideshow(){
+    var frm=document.form1;
+    if(frm.style.display=="block"){frm.style.display="none"}
+    else
+    if(frm.style.display=="none"){frm.style.display="block"}
+    }
 
-var clic = 1;
+    
 
-function divLogin(){ 
-
-   if(clic==1){
-
-   document.getElementById("caja").style.height = "100px";
-
-   clic = clic + 1;
-
-   } else{
-
-       document.getElementById("caja").style.height = "0px";      
-
-    clic = 1;
-
-   }   
-
-}
-
+    function divLogin(){ 
+        var clic = 1;
+       if(clic==1){
+       document.getElementById("form1").style.height = "100px";
+       clic = clic + 1;
+       } else{
+           document.getElementById("form1").style.height = "0px";      
+        clic = 1;
+       }   
+    }
 
 function dibuja() {
     let cont = document.getElementById('cont_cajacomentarios');

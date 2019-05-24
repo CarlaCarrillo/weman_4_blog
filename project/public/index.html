@@ -10,6 +10,8 @@
     
 </head>
 
+
+
 <body>
 <!--encabezdo general-->
 <!--icono, barra de título y espcio para dos iconos del lado derecho-->
@@ -30,13 +32,29 @@
             </td>
     
             <td height="10" width="5%" bgcolor="DARKSLATEGRAY"> 
-                <a onclick="aqui va el nombre de la funcion js" class="user" href="#"><img src="img/user_icon.png" alt="Cinque Terre" width="60" height="60"></a>
+                <a onclick="hideshow()" class="user" href="#"><img src="img/user_icon.png" alt="Cinque Terre" width="60" height="60"></a>
             </td>
         </div>
     </tr>
 </table>
 </div>
+
 </body>
+
+<!--cajita logIn-->
+<body>                
+    <div id="caja">
+        <form name="form1" style="display:block">
+            <h2>Formulario LogIn</h2>
+            <input type="text" placeholder="Usuario" name="usuario">
+            <input type="password" placeholder="Contraseña" name="clave">
+            <input type="submit" value="Ingresar">
+            <input type="submit" value="Olvidé mi contraseña">
+        </form>
+    </div>
+</body>
+
+
    
 <!--navegción-->
     <!--después hay un contenedor grande donde van las publicaciones-->
@@ -59,35 +77,5 @@
 
     </div> 
 </body>
-<body>
-        <div id="boton" onclick="divLogin()">
 
-                Mostrar/Ocultar
-                
-                </div>
-                
-                <div id="caja">
-                
-                </div>
-
-
-        <script>
-                function hideshow(){
-                var frm=document.form1;
-                if(frm.style.display=="block"){frm.style.display="none"}
-                else
-                if(frm.style.display=="none"){frm.style.display="block"}
-                }
-                </script>
-                
-    <div id="caja">
-        <form action="" name="form1" style="display:block">
-            <h2>Formulario LogIn</h2>
-            <input type="text" placeholder="Usuario" name="usuario">
-            <input type="password" placeholder="Contraseña" name="clave">
-            <input type="submit" value="Ingresar">
-            <input type="submit" value="Olvidé mi contraseña">
-        </form>
-    </div>
-</body>
 </html>
