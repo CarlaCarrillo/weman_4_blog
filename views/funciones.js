@@ -1,4 +1,3 @@
-
 //FUNCIONES PARA LA VENTANA EMERGENTE DE LOGIN
 
 function hideshow(){
@@ -8,23 +7,14 @@ function hideshow(){
     if(frm.style.display=="none"){frm.style.display="block"}
     }
 
-    
+//FUNCIONES PARA LA VENTANA EMERGENTE DE LOGIN
 
-    function divLogin(){ 
-        var clic = 1;
-       if(clic==1){
-       document.getElementById("form1").style.height = "100px";
-       clic = clic + 1;
-       } else{
-           document.getElementById("form1").style.height = "0px";      
-        clic = 1;
-       }   
+function hideshow2(){
+    var frm=document.form2;
+    if(frm.style.display=="block"){frm.style.display="none"}
+    else
+    if(frm.style.display=="none"){frm.style.display="block"}
     }
-
-
-//FUNCIONES PARA CONCATENAR LAS CAJITAS DE COMENTARIOS
-
-   
       
 
 
@@ -42,7 +32,13 @@ function peticionAsync(tipo, url, parametros) {
                 if (resp.error == "0") {
                     if(url === '/comentarios') {
                         dibujaPublic(resp.registros);
+
+                    } else if (url === '/login') {
+                        alert("Bienvenido: " + resp.nombre);
                     }
+                    //preparnos para otras peticiones
+                } else if (resp.error == 1) {
+                    alert("Credenciales erróneas");
                 }
 			} else if (ajax.status == 404) {
 				//No encontró el servicio o API
@@ -60,11 +56,39 @@ function peticionAsync(tipo, url, parametros) {
 	ajax.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 	//La función encodeURI se encarga que la petición tenga el formato adecuado para ser enviado...
 	//un ejemplo de petición puede ser variable=valor&otravariable=otrovalor...
-	ajax.send(encodeURI(parametros));
+	if(parametros.toString() === "[object FormData]")
+     ajax.send(parametros);
+    else
+    ajax.send(encodeURI(parametros));
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function leePublicaciones() {
     peticionAsync('GET', '/comentarios', '');
+}
+
+function probarlogin() {
+    var formulario = document.getElementById('form1')
+    peticionAsync('POST', '/login', 'usr=' + formulario.user.value + '&pwd=' + formulario.clave.value);
 }
 
 function dibujaPublic(publicaciones) {
