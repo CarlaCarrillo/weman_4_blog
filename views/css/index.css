@@ -38,7 +38,7 @@ div.iconos:hover {
     
 
 /* ESTILO PARA VENTANA EMERGENTE LogIn */
-form {
+#caja {
   margin: auto;
   margin-top: 5%;
   width: 25%;
@@ -47,8 +47,9 @@ form {
   padding: 20px;
   border: 5px solid purple;
   position: absolute;
-  top: 2px; 
-  left: 60px;
+  top: 50px; 
+  left:60px;
+  visibility: hidden;
 }
 
 h2 {
@@ -102,17 +103,19 @@ input[type="submit"]:active {
 }
 
 /* ESTILO PARA VENTANA EMERGENTE Publicar comentarios */
-form {
+#cajapub {
   margin: auto;
   margin-top: 5%;
   width: 25%;
   max-width: 500px;
   background: #304352;
-  padding: 20px;
+  padding: 17px;
   border: 5px solid purple;
   position: absolute;
-  top: 2px; 
-  left: 60px;
+  top: 50px; 
+  right: 60px;
+  visibility: hidden;
+
 }
 
 

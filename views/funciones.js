@@ -1,20 +1,24 @@
 //FUNCIONES PARA LA VENTANA EMERGENTE DE LOGIN
 
-function hideshow(){
-    var frm=document.form1;
-    if(frm.style.display=="block"){frm.style.display="none"}
-    else
-    if(frm.style.display=="none"){frm.style.display="block"}
-    }
+function mostrar1() {
+    document.getElementById('cajapub').style.visibility="visible";
+    
+}
 
-//FUNCIONES PARA LA VENTANA EMERGENTE DE LOGIN
+function cerrar1() {
+    document.getElementById('cajapub').style.visibility="hidden";
+}
 
-function hideshow2(){
-    var frm=document.form2;
-    if(frm.style.display=="block"){frm.style.display="none"}
-    else
-    if(frm.style.display=="none"){frm.style.display="block"}
-    }
+//FUNCIONES PARA LA VENTANA EMERGENTE DE PUBLICACIONES
+
+function mostrar2() {
+    document.getElementById('caja').style.visibility="visible";
+    
+}
+
+function cerrar2() {
+    document.getElementById('caja').style.visibility="hidden";
+}
       
 
 
@@ -63,33 +67,39 @@ function peticionAsync(tipo, url, parametros) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function leePublicaciones() {
     peticionAsync('GET', '/comentarios', '');
 }
 
+//validando que seas o no administrador
 function probarlogin() {
     var formulario = document.getElementById('form1')
     peticionAsync('POST', '/login', 'usr=' + formulario.user.value + '&pwd=' + formulario.clave.value);
 }
+
+//revisar que los campos no estén vacios 
+//valida que el correo incluya valores aceptados 
+
+function validarfor(){
+
+    var correo = document.getElementById("email"); 
+    var correoregex = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    
+    
+    if(!correoregex.test(correo.value)) {
+		alert('email' + correo.value + 'no valido');
+	}
+	else {
+        alert('email valido');
+    }
+}
+
+
+
+
+
+
+
 
 function dibujaPublic(publicaciones) {
     let cont = document.getElementById('public');
@@ -97,11 +107,10 @@ function dibujaPublic(publicaciones) {
         let nvaPublicación = '<div class="comentario" id="com'+publicaciones[i].id+'">'+
     
     '<div class="comentario_hdr">'+
-        '<h3 id="titulo_'+publicaciones[i].id+'">' + 'Entrada de Noticias ' +publicaciones[i].contenido+'</h3>'+
+        '<h3 id="titulo_">'+publicaciones[i].titulo+'</h3>'+
         '<p id="autor">'+publicaciones[i].idusuario+'Autor del post</p>'+
     '</div>'+
-    `<div id="contenido" class="comentario_cont">${i}Aquí ingresa el contenido de tu comentario</div}`+
-    '<img src="img/delfines.jpg" alt="imagen de ejemplo" />'+
+   '<div id="contenido" class="comentario_cont">' +publicaciones[i].contenido+ '</div>'
     '</div>';
                 cont.innerHTML += nvaPublicación;
             }

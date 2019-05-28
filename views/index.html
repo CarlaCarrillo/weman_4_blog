@@ -28,11 +28,11 @@
             </td>
     
             <td height="10%" width="1%" bgcolor="DARKSLATEGRAY"> 
-                <a onclick="hideshow2()"><img src="img/share_icon2.png" alt="Cinque Terre" width="60" height="60"></a>
+                <a onclick="mostrar1()"><img src="img/share_icon2.png" alt="Cinque Terre" width="60" height="60"></a>
             </td>
     
             <td height="10" width="5%" bgcolor="DARKSLATEGRAY"> 
-                <a onclick="hideshow()" class="user" href="#"><img src="img/user_icon.png" alt="Cinque Terre" width="60" height="60"></a>
+                <a onclick="mostrar2()" class="user" href="#"><img src="img/user_icon.png" alt="Cinque Terre" width="60" height="60"></a>
             </td>
         </div>
     </tr>
@@ -41,32 +41,39 @@
 
 </body>
 
-<!--cajita logIn-->
-<body>                
-    <div id="caja">
-        <form id="form1" name="form1" style="display:block" method="POST" action="./login">
-            <h2>Formulario LogIn</h2>
-            <input type="text" placeholder="Usuario" name="usr">
-            <input type="password" placeholder="Contraseña" name="pwd">
-            <input type="submit" value="Ingresar" onclick="probarlogin()">
-            <input type="submit" value="Olvidé mi contraseña" >
-        </form>
-    </div>
-</body>
-
 <!--cajita Publicar nueva entrada-->
 <body>                
-    <div id="cajapub">
-        <form id="form2" name="form2" style="display:block" method="POST" action="./comentario">
+    <div id="cajapub" >
+        <form id="form2"  method="POST" action="./publica">
+            <input type="hidden" name="idusr" value = "1" />
             <h3>Publicar entrada nueva</h3>
-            <input type="text" placeholder="Título de la entrada" name="titulo">
-            <input type="textcom" placeholder="Contenido" name="comentario"  >
-            <input type="submitpub" value="Publicar">
+            <input id="titulo" type="text" placeholder="Título de la entrada" name="titulo">
+            <textarea id="contenido" name= "cajitacomen" cols= "39" rows="5" placeholder="Contenido"></textarea>
+            <p id="autor"><h3>Autor del post</h3></p>
+            <input type="submit" value="Publicar">
         </form>
+        <input type="submit" value="Cerrar" onclick="cerrar1()">
     </div>
 </body>
 
-   
+
+<!--cajita logIn-->
+<body>                
+    <div id="caja" >
+        <form id="form1" name="form1" style="display:block" method="POST" action="./login" onsubmit="validarfor()">
+            <h2>Formulario LogIn</h2>
+            <input id="email" type="email" placeholder="Correo" name="usr" required="required">
+            <p>
+            <input id="password" type="password" placeholder="Contraseña" name="pwd" required="required" > <span id="emailOK"></span>
+            </p>
+            <input type="submit" value="Ingresar" onclick="probarlogin()" >
+            <input type="submit" value="Olvidé mi contraseña" >
+        </form>
+        <input type="submit" value="Cerrar" onclick="cerrar2()">
+    </div>
+</body>
+
+
 <!--navegción-->
     <!--después hay un contenedor grande donde van las publicaciones-->
 <!--podría añadir aquí el separador o div para la publicación nueva-->    
